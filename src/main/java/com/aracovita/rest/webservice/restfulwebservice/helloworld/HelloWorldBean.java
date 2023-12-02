@@ -1,4 +1,4 @@
-package com.aracovita.rest.webservice.restfulwebservice;
+package com.aracovita.rest.webservice.restfulwebservice.helloworld;
 
 public class HelloWorldBean {
 

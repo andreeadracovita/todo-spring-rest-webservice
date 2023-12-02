@@ -1,4 +1,4 @@
-package com.aracovita.rest.webservice.restfulwebservice;
+package com.aracovita.rest.webservice.restfulwebservice.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
