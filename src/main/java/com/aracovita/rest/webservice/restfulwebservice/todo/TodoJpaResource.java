@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,8 @@ public class TodoJpaResource {
 	private TodoJpaRepository todoJpaRepository;
 
 	@GetMapping("/jpa/users/{username}/todos")
+	@PreAuthorize("#username == authentication.name")
+	@PostAuthorize("returnObject[0].username == #username")
 	public List<Todo> getAllTodos(@PathVariable String username) {
 		return todoJpaRepository.findByUsername(username);
 	}
